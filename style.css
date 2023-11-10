@@ -93,6 +93,7 @@ body {
 .Quote-box button:nth-child(2) {
     background: transparent;
     color: #333;
+    display: none;
 }
 
 /* Media query for screens with a maximum width of 767 pixels */
@@ -100,7 +101,7 @@ body {
     .Quote-box {
         width: 90%; 
         padding: 20px; 
-        margin-left: 12px;
+        margin-left: px;
         margin-top: 5px;
     }
 
