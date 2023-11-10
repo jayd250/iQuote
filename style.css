@@ -1,0 +1,151 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,400&family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Playfair Display', serif;
+}
+
+body {
+    background: #FFA500;
+}
+
+.Quote-box {
+    background: #fff;
+    width: 700px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 40px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 10px 20px 0px rgba(0, 0, 0, 0.15);
+}
+
+.Quote-box h2 {
+    font-size: 32px;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.Quote-box h2::after {
+    content: '';
+    width: 75px;
+    height: 3px;
+    border-radius: 3px;
+    background: #FFA500;
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translate(-50%);
+}
+
+.Quote-box blockquote {
+    font-size: 26px;
+    min-height: 110px;
+}
+
+.Quote-box blockquote::before,
+.Quote-box blockquote::after {
+    content: '"';
+}
+
+.Quote-box span {
+    display: block;
+    margin-top: 10px;
+    float: right;
+    position: relative;
+}
+
+.Quote-box span::before {
+    content: '';
+    width: 20px;
+    height: 2px;
+    background: #FFA500;
+    position: absolute;
+    top: 50%;
+    left: -30px;
+}
+
+.Quote-box div {
+    width: 100%;
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.Quote-box button {
+    background: #FFA500;
+    color: #fff;
+    border-radius: 25px;
+    border: 1px solid #FFA500;
+    width: 150px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.Quote-box button:nth-child(2) {
+    background: transparent;
+    color: #333;
+}
+
+/* Media query for screens with a maximum width of 767 pixels */
+@media only screen and (max-width: 767px) {
+    .Quote-box {
+        width: 90%; 
+        padding: 20px; 
+        margin-left: 12px;
+        margin-top: 5px;
+    }
+
+    .Quote-box h2 {
+        font-size: 24px; 
+    }
+
+    .Quote-box blockquote {
+        font-size: 18px; 
+    }
+
+    .Quote-box span::before {
+        width: 15px; 
+        left: -20px;
+    }
+
+    .Quote-box button {
+        width: 120px; 
+        height: 40px; 
+        font-size: 14px; 
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 1023px) {
+    .Quote-box {
+        width: 60%; 
+    }
+
+    .Quote-box h2 {
+        font-size: 28px; 
+    }
+
+    .Quote-box blockquote {
+        font-size: 22px; 
+    }
+
+    .Quote-box span::before {
+        width: 18px; 
+        left: -25px; 
+    }
+
+    .Quote-box button {
+        width: 140px; 
+        height: 45px; 
+        font-size: 16px; 
+    }
+}
+

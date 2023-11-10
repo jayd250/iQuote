@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iQuote</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="Quote-box">
+        <h2>iQuote</h2>
+        <blockquote id="quote">Loading...</blockquote>
+        <span id="author">Loading...</span>
+        <div>
+            <button onclick="getquote(api_url)">New Quote</button>
+            <button onclick="chooseSocialMedia()">Share</button>
+        </div>
+    </div>
+<script>
+const quote = document.getElementById("quote");
+const author = document.getElementById("author");
+const api_url = "https://api.quotable.io/random";
+async function getquote(url){
+    const response = await fetch(url);
+    var data = await response.json();
+    
+    quote.innerHTML = data.content;
+    author.innerHTML = data.author;
+}
+
+getquote(api_url)
+
+function chooseSocialMedia() {
+            try {
+                // Prompt the user to choose a social media platform
+                const socialMedia = prompt("Choose a social media platform: Twitter, WhatsApp, or Instagram");
+
+                // Convert the user input to lowercase for case-insensitive comparison
+                const lowerCaseSocialMedia = socialMedia ? socialMedia.toLowerCase() : '';
+
+                // Share link based on user's choice
+                switch (lowerCaseSocialMedia) {
+                    case 'twitter':
+                        shareOnTwitter('YourText', 'YourURL');
+                        break;
+                    case 'whatsapp':
+                        shareOnWhatsApp('YourText', 'YourURL');
+                        break;
+                    case 'instagram':
+                        shareOnInstagram('YourText', 'YourURL');
+                        break;
+                    default:
+                        alert('Invalid choice. Please choose Twitter, WhatsApp, or Instagram.');
+                }
+            } catch (error) {
+                console.error('Error:', error.message);
+            }
+        }
+
+        function shareOnTwitter(text, url) {
+            const twitterLink = `https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(url)}`;
+            window.open(twitterLink, '_blank');
+        }
+
+        function shareOnWhatsApp(text, url) {
+            const whatsAppLink = `https://api.whatsapp.com/send?text=${encodeURIComponent(text + ' ' + url)}&url=${encodeURIComponent(url)}`;
+            window.open(whatsAppLink, '_blank');
+        }
+
+        function shareOnInstagram(text, url) {
+            // As of my last knowledge update, Instagram does not provide a direct share link, so this is a placeholder
+            const instagramLink = `https://www.instagram.com/`;
+            window.open(instagramLink, '_blank');
+        }
+</script>
+
+</body>
+    
+</html>
