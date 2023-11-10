@@ -41,13 +41,13 @@ function chooseSocialMedia() {
                 // Share link based on user's choice
                 switch (lowerCaseSocialMedia) {
                     case 'twitter':
-                        shareOnTwitter('quoteText', 'quoteURL');
+                        shareOnTwitter(quoteText, quoteURL);
                         break;
                     case 'whatsapp':
-                        shareOnWhatsApp('quoteText', 'quoteURL');
+                        shareOnWhatsApp(quoteText, quoteURL);
                         break;
                     case 'instagram':
-                        shareOnInstagram('YourText', 'quoteURL');
+                        shareOnInstagram(quoteText, quoteURL);
                         break;
                     default:
                         alert('Invalid choice. Please choose Twitter, WhatsApp, or Instagram.');
